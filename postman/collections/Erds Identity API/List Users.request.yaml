@@ -3,3 +3,25 @@ name: List Users
 method: GET
 url: '{{baseUrl}}/users'
 order: 4000
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test("Status code is 200", function () {
+          pm.response.to.have.status(200);
+      });
+
+      pm.test("Response has users array", function () {
+          const jsonData = pm.response.json();
+          pm.expect(jsonData).to.have.property("users");
+          pm.expect(jsonData.users).to.be.an("array");
+      });
+
+      pm.test("Each user has id, name, and email", function () {
+          const jsonData = pm.response.json();
+          jsonData.users.forEach(function (user) {
+              pm.expect(user).to.have.property("id");
+              pm.expect(user).to.have.property("name");
+              pm.expect(user).to.have.property("email");
+          });
+      });
+    language: text/javascript

@@ -1,0 +1,20 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/users/:userId"
+  method: GET
+  pathVariables:
+    userId: "10054321"
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: json
+    content: |-
+      {
+        "user": {
+          "id": "10054321",
+          "name": "Tony Stark",
+          "email": "tony.stark@avengers.com"
+        }
+      }
+order: 1773777581497

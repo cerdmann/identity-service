@@ -1,5 +1,0 @@
-name: Local
-values:
-  - key: baseUrl
-    value: 'http://localhost:3001'
-    enabled: true

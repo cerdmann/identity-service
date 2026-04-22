@@ -1,0 +1,151 @@
+openapi: 3.0.0
+info:
+  title: Identity Service
+  description: A user identity management API for creating and retrieving users.
+  version: 1.0.0
+
+servers:
+  - url: '{{baseUrl}}'
+    description: Identity Service server
+
+paths:
+  /users:
+    post:
+      summary: Create User
+      description: Creates a new user. Returns 201 with the created user on success, 200 with existing:true if email already exists, or 400 if fields are missing.
+      operationId: createUser
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - name
+                - email
+              properties:
+                name:
+                  type: string
+                  example: Jane Doe
+                email:
+                  type: string
+                  format: email
+                  example: jane.doe@example.com
+      responses:
+        '201':
+          description: User created successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  user:
+                    $ref: '#/components/schemas/User'
+        '200':
+          description: Email already exists, returning existing user
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  user:
+                    $ref: '#/components/schemas/User'
+                  existing:
+                    type: boolean
+                    example: true
+        '400':
+          description: Missing required fields
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: name and email are required
+
+    get:
+      summary: List Users
+      description: Returns all users.
+      operationId: listUsers
+      responses:
+        '200':
+          description: List of all users
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  users:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/User'
+
+  /users/{id}:
+    get:
+      summary: Get User by ID
+      description: Returns a user by their ID, or 404 if not found.
+      operationId: getUserById
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+          example: u1
+      responses:
+        '200':
+          description: User found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  user:
+                    $ref: '#/components/schemas/User'
+        '404':
+          description: User not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: user not found
+
+  /health:
+    get:
+      summary: Health Check
+      description: Returns the health status of the service.
+      operationId: healthCheck
+      responses:
+        '200':
+          description: Service is healthy
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: ok
+                  service:
+                    type: string
+                    example: identity-api
+
+components:
+  schemas:
+    User:
+      type: object
+      properties:
+        id:
+          type: string
+          example: u1
+        name:
+          type: string
+          example: Jane Doe
+        email:
+          type: string
+          format: email
+          example: jane.doe@example.com

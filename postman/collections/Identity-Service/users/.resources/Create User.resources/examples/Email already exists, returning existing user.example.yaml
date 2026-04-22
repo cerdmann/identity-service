@@ -1,0 +1,59 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/users"
+  method: POST
+  headers:
+    Content-Type: application/json
+    Accept: application/json
+  body:
+    type: json
+    content: |-
+      {
+        "name": "<string>",
+        "email": "<email>"
+      }
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+        "user": {
+          "id": "<string>",
+          "name": "<string>",
+          "email": "<email>"
+        },
+        "existing": "<boolean>"
+      }
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "user": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "example": "u1"
+              },
+              "name": {
+                "type": "string",
+                "example": "Jane Doe"
+              },
+              "email": {
+                "type": "string",
+                "example": "jane.doe@example.com",
+                "format": "email"
+              }
+            }
+          },
+          "existing": {
+            "type": "boolean",
+            "example": true
+          }
+        }
+      }
+order: 1000

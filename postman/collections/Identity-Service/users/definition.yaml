@@ -1,0 +1,7 @@
+$kind: folder
+name: users
+description: User management endpoints for creating, listing, and retrieving users.
+order:
+  - 'Create User'
+  - 'List Users'
+  - '{id}'

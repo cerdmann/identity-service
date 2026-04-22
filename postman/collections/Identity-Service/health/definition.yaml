@@ -1,0 +1,5 @@
+$kind: folder
+name: health
+description: Health check endpoints for the Identity Service.
+order:
+  - 'Health Check'

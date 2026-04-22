@@ -1,0 +1,5 @@
+$kind: folder
+name: '{id}'
+description: Endpoints for operations on a specific user by ID.
+order:
+  - 'Get User by ID'

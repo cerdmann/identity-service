@@ -1,0 +1,5 @@
+name: local
+values:
+  - key: baseUrl
+    enabled: true
+    value: ''

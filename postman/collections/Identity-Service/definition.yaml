@@ -1,0 +1,14 @@
+$kind: collection
+name: Identity-Service
+id: b64870bB37a5ab6bd28d0E7C
+description: |-
+  API collection for the Identity Service, covering user management and health check endpoints.
+auth:
+  type: noauth
+variables:
+  - key: baseUrl
+    value: 'http://localhost:3001'
+    description: Base URL for the Identity Service
+order:
+  - health
+  - users

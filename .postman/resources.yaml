@@ -9,6 +9,9 @@ cloudResources:
     ../postman/collections/Identity-Service: 53284017-80c9dbbd-4e9d-4f0c-81cb-3f1bf87b1784
   specs:
     ../postman/specs/identity-service.yaml: a27b0f35-473c-420c-be82-98bb48412ec1
+    ../postman/specs/openapi.yaml: aa74aa62-3867-47f3-b3e9-9b53a73678a5
+  environments:
+    ../postman/environments/local.environment.yaml: 9abcec24-2e0b-50f4-89c0-fd470f620f86
 
 # All resources in the `postman/` folder are automatically registered in Local View.
 # Point to additional files outside the `postman/` folder to register them individually. Example:

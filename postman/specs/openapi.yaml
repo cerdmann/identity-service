@@ -11,7 +11,7 @@ servers:
 paths:
   /users:
     post:
-      summary: Create User
+      summary: Create a User
       description: Creates a new user. Returns 201 with the created user on success, 200 with existing:true if email already exists, or 400 if fields are missing.
       operationId: createUser
       requestBody:

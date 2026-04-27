@@ -5,7 +5,7 @@ request:
   headers:
     Accept: application/json
   pathVariables:
-    id: <string>
+    id: u999
   body:
     type: text
     content: ""
@@ -18,7 +18,7 @@ response:
     type: json
     content: |-
       {
-        "error": "<string>"
+        "error": "user not found"
       }
     $type: |-
       {

@@ -16,8 +16,8 @@ response:
     type: json
     content: |-
       {
-        "status": "<string>",
-        "service": "<string>"
+        "status": "ok",
+        "service": "identity-api"
       }
     $type: |-
       {

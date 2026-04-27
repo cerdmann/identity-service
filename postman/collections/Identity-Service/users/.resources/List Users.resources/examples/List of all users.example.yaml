@@ -18,14 +18,19 @@ response:
       {
         "users": [
           {
-            "id": "<string>",
-            "name": "<string>",
-            "email": "<email>"
+            "id": "u1",
+            "name": "Remy Okonkwo",
+            "email": "remy.okonkwo@novabridge.dev"
           },
           {
-            "id": "<string>",
-            "name": "<string>",
-            "email": "<email>"
+            "id": "u2",
+            "name": "Saoirse Flanagan",
+            "email": "saoirse.flanagan@driftlabs.co"
+          },
+          {
+            "id": "u3",
+            "name": "Tariq El-Amin",
+            "email": "tariq.elamin@vaultmesh.com"
           }
         ]
       }
@@ -44,11 +49,11 @@ response:
                 },
                 "name": {
                   "type": "string",
-                  "example": "Jane Doe"
+                  "example": "Remy Okonkwo"
                 },
                 "email": {
                   "type": "string",
-                  "example": "jane.doe@example.com",
+                  "example": "remy.okonkwo@novabridge.dev",
                   "format": "email"
                 }
               }

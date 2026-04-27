@@ -9,8 +9,8 @@ request:
     type: json
     content: |-
       {
-        "name": "<string>",
-        "email": "<email>"
+        "name": "Priya Kapoor",
+        "email": "priya.kapoor@stellarworks.io"
       }
 response:
   statusCode: 201
@@ -22,9 +22,9 @@ response:
     content: |-
       {
         "user": {
-          "id": "<string>",
-          "name": "<string>",
-          "email": "<email>"
+          "id": "u7",
+          "name": "Priya Kapoor",
+          "email": "priya.kapoor@stellarworks.io"
         }
       }
     $type: |-
@@ -36,15 +36,15 @@ response:
             "properties": {
               "id": {
                 "type": "string",
-                "example": "u1"
+                "example": "u7"
               },
               "name": {
                 "type": "string",
-                "example": "Jane Doe"
+                "example": "Priya Kapoor"
               },
               "email": {
                 "type": "string",
-                "example": "jane.doe@example.com",
+                "example": "priya.kapoor@stellarworks.io",
                 "format": "email"
               }
             }

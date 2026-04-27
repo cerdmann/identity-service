@@ -9,8 +9,8 @@ request:
     type: json
     content: |-
       {
-        "name": "<string>",
-        "email": "<email>"
+        "name": "",
+        "email": ""
       }
 response:
   statusCode: 400
@@ -21,7 +21,7 @@ response:
     type: json
     content: |-
       {
-        "error": "<string>"
+        "error": "name and email are required"
       }
     $type: |-
       {

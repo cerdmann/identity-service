@@ -5,7 +5,7 @@ request:
   headers:
     Accept: application/json
   pathVariables:
-    id: <string>
+    id: u2
   body:
     type: text
     content: ""
@@ -19,9 +19,9 @@ response:
     content: |-
       {
         "user": {
-          "id": "<string>",
-          "name": "<string>",
-          "email": "<email>"
+          "id": "u2",
+          "name": "Saoirse Flanagan",
+          "email": "saoirse.flanagan@driftlabs.co"
         }
       }
     $type: |-
@@ -33,15 +33,15 @@ response:
             "properties": {
               "id": {
                 "type": "string",
-                "example": "u1"
+                "example": "u2"
               },
               "name": {
                 "type": "string",
-                "example": "Jane Doe"
+                "example": "Saoirse Flanagan"
               },
               "email": {
                 "type": "string",
-                "example": "jane.doe@example.com",
+                "example": "saoirse.flanagan@driftlabs.co",
                 "format": "email"
               }
             }

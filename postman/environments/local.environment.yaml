@@ -2,4 +2,4 @@ name: local
 values:
   - key: baseUrl
     enabled: true
-    value: ''
+    value: 'http://localhost:3001'
